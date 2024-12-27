@@ -155,3 +155,65 @@ The request body should be a JSON object containing the following fields:
     ]
   }
   ```
+
+# Get User Profile Endpoint
+
+## GET /users/profile
+
+### Description
+This endpoint is used to get the profile information of the logged-in user.
+
+### Headers
+- `Authorization` (string, required): The user's access token.
+
+### Responses
+
+#### Success
+- **Status Code**: 200 OK
+- **Response Body**:
+  ```json
+  {
+    "id": "user_id",
+    "fullname": "John Doe",
+    "email": "john.doe@example.com"
+  }
+  ```
+
+#### Unauthorized
+- **Status Code**: 401 Unauthorized
+- **Response Body**:
+  ```json
+  {
+    "message": "Invalid or missing token"
+  }
+  ```
+
+# Logout User Endpoint
+
+## POST /users/logout
+
+### Description
+This endpoint is used to log out the user.
+
+### Headers
+- `Authorization` (string, required): The user's access token.
+
+### Responses
+
+#### Success
+- **Status Code**: 200 OK
+- **Response Body**:
+  ```json
+  {
+    "message": "Logged out successfully"
+  }
+  ```
+
+#### Unauthorized
+- **Status Code**: 401 Unauthorized
+- **Response Body**:
+  ```json
+  {
+    "message": "Invalid or missing token"
+  }
+  ```
